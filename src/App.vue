@@ -41,7 +41,8 @@ export default {
   @apply p-4 text-black border w-full;
 }
 .input-form {
-  @apply p-4;
+  @apply p-4 bg-blue-100;
+  height: 30em;
 }
 .input-form label {
   @apply my-4 block font-display text-3xl;
@@ -57,5 +58,12 @@ export default {
 }
 .button.is-primary:hover {
   @apply bg-blue-500;
+}
+.loading {
+  @apply p-4 flex text-center items-center justify-center bg-blue-300 text-white font-display;
+  height: 30em;
+}
+.loading h1 {
+  @apply text-6xl;
 }
 </style>
