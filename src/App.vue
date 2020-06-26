@@ -3,18 +3,32 @@
     <div class="appbar">
       <h1>ThaiPlease</h1>
     </div>
-    <div class="input-form">
+    <div v-if="status === 'input'" class="input-form">
       <label>ใส่ข้อควาามไทย-อังกฤษที่นี่</label>
-      <textarea class="input" rows="10" placeholder="Big data" />
+      <textarea v-model="thaiEnglish" class="input" rows="10" placeholder="Big data" />
+    </div>
+    <div v-if="status === 'loading'" class="loading">
+       Loading
     </div>
     <div class="button-group">
-      <button class="button is-primary">แปลภาษาไทย</button>
+      <button @click="translate" class="button is-primary">แปลภาษาไทย</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      thaiEnglish: '',
+      status: 'input',
+    };
+  },
+  methods: {
+    translate() {
+      this.status = 'loading';
+    },
+  },
   name: 'app',
 };
 </script>
@@ -24,7 +38,7 @@ export default {
   @apply text-center text-white bg-blue-400 text-5xl;
 }
 .input {
-  @apply p-4 bg-gray-100 text-black border w-full;
+  @apply p-4 text-black border w-full;
 }
 .input-form {
   @apply p-4;
