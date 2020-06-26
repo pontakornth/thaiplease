@@ -3,6 +3,7 @@
 @font-face {
   font-family: 'EDNamMool';
   src: url('./EDNamMool.ttf') format('truetype');
+  font-display: swap;
 }
 
 @tailwind base;
