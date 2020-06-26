@@ -3,23 +3,25 @@
     <div class="appbar">
       <h1>ThaiPlease</h1>
     </div>
-    <div key="1" v-if="status === 'input'" class="input-form">
-      <label>ใส่ข้อควาามไทย-อังกฤษที่นี่</label>
-      <textarea v-model="thaiEnglish" class="input" rows="10" placeholder="Big data" />
-    </div>
-    <div key="2" v-else-if="status === 'loading'" class="loading">
-        <h1>
-          กำลังแปล
-        </h1>
-    </div>
-    <div key="3" v-else-if="status == 'translated'" class="translated">
-      <h1>คำแปล</h1>
-      <p>
-        {{ thai }}
-      </p>
-    </div>
-    <div class="button-group">
-      <button @click="translate" class="button is-primary">{{ actionButtonLabel }}</button>
+    <div class="flex-container">
+      <div key="1" v-if="status === 'input'" class="input-form">
+        <label>ใส่ข้อควาามไทย-อังกฤษที่นี่</label>
+        <textarea v-model="thaiEnglish" class="input" rows="10" placeholder="Big data" />
+      </div>
+      <div key="2" v-else-if="status === 'loading'" class="loading">
+          <h1>
+            กำลังแปล
+          </h1>
+      </div>
+      <div key="3" v-else-if="status == 'translated'" class="translated">
+        <h1>คำแปล</h1>
+        <p class="translated-text">
+          {{ thai }}
+        </p>
+      </div>
+      <div class="button-group">
+        <button @click="translate" class="button is-primary">{{ actionButtonLabel }}</button>
+      </div>
     </div>
   </div>
 </template>
@@ -85,7 +87,7 @@ export default {
   @apply text-mustard bg-chestnut;
 }
 .button.is-primary:hover {
-  @apply bg-mustard text-chestnut;
+  @apply bg-honey text-chestnut;
 }
 .loading {
   @apply p-4 flex text-center items-center justify-center bg-mustard text-chestnut font-display;
@@ -108,6 +110,33 @@ export default {
 }
 .translated h1 {
   @apply text-5xl;
+}
+.translated-text {
+  white-space: pre;
+  height: 15em;
+  overflow-y: scroll;
+  @apply border border-chestnut bg-white;
+}
+
+@screen lg {
+  .flex-container {
+    @apply flex flex-col justify-center items-center flex-wrap pt-8 relative;
+  }
+  .flex-container *:not(button) {
+    @apply w-full;
+  }
+  .loading, .input-form, .translated {
+    @apply px-16;
+  }
+  .input-form label, .input-form textarea {
+    @apply w-3/4 mx-auto block;
+  }
+  .translated h1, .translated p {
+    @apply w-3/4 mx-auto block;
+  }
+  .button {
+    @apply text-xl p-2;
+  }
 }
 
 /* Transition and Animation */
