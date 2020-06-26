@@ -15,7 +15,7 @@
     <div key="3" v-else-if="status == 'translated'" class="translated">
       <h1>คำแปล</h1>
       <p>
-        หล่อเร็มยิปซัม ด่อรอ มาการอง โคจิม่า
+        {{ thai }}
       </p>
     </div>
     <div class="button-group">
@@ -25,11 +25,14 @@
 </template>
 
 <script>
+import translate from './utils/translator';
+
 export default {
   data() {
     return {
       thaiEnglish: '',
       status: 'input',
+      thai: '',
     };
   },
   methods: {
@@ -37,6 +40,7 @@ export default {
       // TODO: Implement translation
       if (this.status === 'input') {
         this.status = 'loading';
+        this.thai = translate(this.thaiEnglish);
         setTimeout(() => {
           this.status = 'translated';
         }, 1500);
