@@ -69,7 +69,7 @@ export default {
   @apply p-4 text-black border w-full;
 }
 .input-form {
-  @apply p-4 bg-yellow-100;
+  @apply p-4 bg-honey;
   height: 30em;
 }
 .input-form label {
