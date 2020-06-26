@@ -63,17 +63,17 @@ export default {
 
 <style lang="postcss">
 .appbar {
-  @apply text-center text-white bg-blue-400 text-5xl;
+  @apply text-center text-mustard bg-chestnut text-5xl;
 }
 .input {
   @apply p-4 text-black border w-full;
 }
 .input-form {
-  @apply p-4 bg-blue-100;
+  @apply p-4 bg-yellow-100;
   height: 30em;
 }
 .input-form label {
-  @apply my-4 block font-display text-3xl;
+  @apply my-4 block text-chestnut font-display text-3xl;
 }
 .button-group {
   @apply py-4 px-8 flex justify-center items-center text-center;
@@ -82,13 +82,13 @@ export default {
   @apply p-2 cursor-pointer border font-display;
 }
 .button.is-primary {
-  @apply text-white bg-blue-400;
+  @apply text-mustard bg-chestnut;
 }
 .button.is-primary:hover {
-  @apply bg-blue-500;
+  @apply bg-mustard text-chestnut;
 }
 .loading {
-  @apply p-4 flex text-center items-center justify-center bg-blue-300 text-white font-display;
+  @apply p-4 flex text-center items-center justify-center bg-mustard text-chestnut font-display;
   height: 30em;
 }
 .loading h1 {
@@ -104,7 +104,7 @@ export default {
  height: 30em;
 }
 .translated h1 {
-  @apply text-5xl;
+  @apply text-5xl text-chestnut;
 }
 .translated h1 {
   @apply text-5xl;
