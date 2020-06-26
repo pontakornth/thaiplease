@@ -4,6 +4,8 @@
       <h1>ThaiPlease</h1>
     </div>
     <div class="flex-container">
+      <img class="decoration left" src="./assets/border-left-bottom.png" />
+      <img class="decoration right" src="./assets/border-right-top.png" />
       <div key="1" v-if="status === 'input'" class="input-form">
         <label>ใส่ข้อควาามไทย-อังกฤษที่นี่</label>
         <textarea v-model="thaiEnglish" class="input" rows="10" placeholder="Big data" />
@@ -117,6 +119,9 @@ export default {
   overflow-y: scroll;
   @apply border border-chestnut bg-white;
 }
+.decoration {
+  display: none;
+}
 
 @screen lg {
   .flex-container {
@@ -136,6 +141,18 @@ export default {
   }
   .button {
     @apply text-xl p-2;
+  }
+  .decoration {
+    @apply absolute inline;
+    width: 360px !important;
+  }
+  .decoration.left {
+    bottom: 0;
+    left:0;
+  }
+  .decoration.right {
+    top:0;
+    right: 0;
   }
 }
 
