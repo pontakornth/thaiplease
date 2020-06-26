@@ -12,6 +12,12 @@
           กำลังแปล
         </h1>
     </div>
+    <div key="3" v-else-if="status == 'translated'" class="translated">
+      <h1>คำแปล</h1>
+      <p>
+        หล่อเร็มยิปซัม ด่อรอ มาการอง โคจิม่า
+      </p>
+    </div>
     <div class="button-group">
       <button @click="translate" class="button is-primary">แปลภาษาไทย</button>
     </div>
@@ -28,8 +34,12 @@ export default {
   },
   methods: {
     translate() {
+      // TODO: Implement translation
       if (this.status === 'input') {
         this.status = 'loading';
+        setTimeout(() => {
+          this.status = 'translated';
+        }, 1500);
       } else {
         this.status = 'input';
       }
@@ -76,6 +86,13 @@ export default {
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+.translated {
+ @apply p-4;
+ height: 30em;
+}
+.translated h1 {
+  @apply text-5xl;
 }
 
 /* Transition and Animation */
