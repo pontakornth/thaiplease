@@ -94,6 +94,9 @@ export default {
 .translated h1 {
   @apply text-5xl;
 }
+.translated h1 {
+  @apply text-5xl;
+}
 
 /* Transition and Animation */
 @keyframes loading {
