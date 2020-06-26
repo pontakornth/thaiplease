@@ -19,7 +19,7 @@
       </p>
     </div>
     <div class="button-group">
-      <button @click="translate" class="button is-primary">แปลภาษาไทย</button>
+      <button @click="translate" class="button is-primary">{{ actionButtonLabel }}</button>
     </div>
   </div>
 </template>
@@ -34,6 +34,14 @@ export default {
       status: 'input',
       thai: '',
     };
+  },
+  computed: {
+    actionButtonLabel() {
+      if (this.status === 'input') {
+        return 'แปลภาษาไทย';
+      }
+      return 'ลองใหม่';
+    },
   },
   methods: {
     translate() {
