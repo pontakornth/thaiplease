@@ -3,12 +3,14 @@
     <div class="appbar">
       <h1>ThaiPlease</h1>
     </div>
-    <div v-if="status === 'input'" class="input-form">
+    <div key="1" v-if="status === 'input'" class="input-form">
       <label>ใส่ข้อควาามไทย-อังกฤษที่นี่</label>
       <textarea v-model="thaiEnglish" class="input" rows="10" placeholder="Big data" />
     </div>
-    <div v-if="status === 'loading'" class="loading">
-       Loading
+    <div key="2" v-else-if="status === 'loading'" class="loading">
+        <h1>
+          กำลังแปล
+        </h1>
     </div>
     <div class="button-group">
       <button @click="translate" class="button is-primary">แปลภาษาไทย</button>
@@ -26,7 +28,11 @@ export default {
   },
   methods: {
     translate() {
-      this.status = 'loading';
+      if (this.status === 'input') {
+        this.status = 'loading';
+      } else {
+        this.status = 'input';
+      }
     },
   },
   name: 'app',
@@ -65,5 +71,20 @@ export default {
 }
 .loading h1 {
   @apply text-6xl;
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Transition and Animation */
+@keyframes loading {
+ 0% {
+   transform: rotate(30deg);
+ }
+ 100% {
+   transform: rotate(-30deg);
+ }
 }
 </style>
