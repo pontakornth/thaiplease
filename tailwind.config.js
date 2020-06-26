@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         chestnut: '#69491A',
         mustard: '#FFD954',
-        honey: 'F2AB39',
+        honey: '#F2AB39',
       },
     },
   },
