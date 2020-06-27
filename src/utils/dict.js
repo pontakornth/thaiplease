@@ -41,6 +41,7 @@ const dictionary = new Map([
   [/\s?group influence\s?/gi, ''],
   [/\s?counter example\s?/gi, 'ตัวอย่างค้าน'],
   [/\s?deep learning\s?/gi, 'การเรียนรู้เชิงลึก'],
+/*  [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
@@ -116,7 +117,6 @@ const dictionary = new Map([
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
-   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
@@ -146,7 +146,6 @@ const dictionary = new Map([
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
-   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
@@ -176,6 +175,7 @@ const dictionary = new Map([
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
+  [/\s?\s?/gi, ''], */
 ]);
 
 export default dictionary;
