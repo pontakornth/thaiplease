@@ -25,13 +25,18 @@
         <button @click="translate" class="button is-primary">{{ actionButtonLabel }}</button>
       </div>
     </div>
+    <credit />
   </div>
 </template>
 
 <script>
+import Credit from './components/Credit.vue';
 import translate from './utils/translator';
 
 export default {
+  components: {
+    Credit,
+  },
   data() {
     return {
       thaiEnglish: '',
@@ -117,7 +122,7 @@ export default {
   white-space: pre;
   height: 15em;
   overflow-y: scroll;
-  @apply border border-chestnut bg-white;
+  @apply border border-chestnut bg-white p-4;
 }
 .decoration {
   display: none;
