@@ -17,7 +17,7 @@ export default {
 
 <style lang="postcss" scoped>
 .credit {
-  @apply font-display text-center text-lg ;
+  @apply font-display text-center text-lg text-chestnut;
 }
 .credit h1 {
   @apply text-4xl;
