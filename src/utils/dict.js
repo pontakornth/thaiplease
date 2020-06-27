@@ -82,7 +82,7 @@ const dictionary = new Map([
   [/\s?virtual reality\s?/gi, 'ความเป็นจริงเสมอ'],
   [/\s?VR\s?/gi, 'วีอาร์'],
   [/\s?data\s?/gi, 'ข้อมูล'],
-  [/\s?\s?/gi, ''],
+/*  [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
   [/\s?\s?/gi, ''],
